@@ -1,0 +1,4 @@
+id,username,raw_password,first_name,last_name,email,is_superuser,is_staff,is_active,date_joined
+1,lin,123,Lin,,lin@tecnoville.example,1,1,1,2026-10-15T08:00:00-03:00
+2,senai_admin,123456,Administrador,SENAI,admin@tecnoville.example,0,1,1,2026-10-15T08:00:00-03:00
+3,senai,123456,Usuário,SENAI,senai@tecnoville.example,0,0,1,2026-10-15T08:00:00-03:00

@@ -1,0 +1,36 @@
+[project]
+name = "monitoring-system"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Davi-Fran", email = "dafaosi.avlis@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "django>=6.1.2",
+    "django-filter>=26.2",
+    "djangorestframework>=3.18.3",
+    "djangorestframework-simplejwt>=5.5.1",
+    "drf-spectacular>=0.30.0",
+    "mysqlclient>=2.3.0",
+    "pillow>=13.0.0",
+    "python-dotenv>=1.2.4",
+]
+
+[dependency-groups]
+dev = []
+
+[project.scripts]
+monitoring-system = "monitoring_system:main"
+
+[tool.uv.build-backend]
+module-name="apps"
+module-root="."
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
