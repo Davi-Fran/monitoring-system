@@ -34,8 +34,8 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG") == "true"
 
-ALLOWED_HOSTS = 'localhost,127.0.0.1,davifran.alwaysdata.net'
-CSRF_TRUSTED_ORIGINS = 'https://davifran.alwaysdata.net'
+ALLOWED_HOSTS = ['localhost','127.0.0.1','davifran.alwaysdata.net']
+CSRF_TRUSTED_ORIGINS = ['https://davifran.alwaysdata.net']
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -187,5 +187,16 @@ MEDIA_ROOT = BASE_DIR / 'public'
 MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+    },
+}
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {"class": "logging.StreamHandler"},
+    },
+    "loggers": {
+        "django.request": {"handlers": ["console"], "level": "ERROR"},
     },
 }
